@@ -1,4 +1,4 @@
-<form class="row g-3">
+<form class="row g-3" method="Post" action="codigo.php">
   <div class="col-md-4">
     <label for="inputEmail4" class="form-label">Numero de expediente</label>
     <input type="text" class="form-control" id="inputExpediente">
