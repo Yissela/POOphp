@@ -1,14 +1,14 @@
 <?php
         class data{
-                function Cconexion(){
+               public static function Cconexion(){
 
-                    $host = "";
-                    $dbname ="";
-                    $user= "";
-                    $password= "";
+                    $host = "localhost";
+                    $dbname ="POO";
+                    $user= "postgres";
+                    $password= "Garcia";
 
                     try{
-                            $con = POD();
+                            $con = new PDO ("pgsql:host=$host; dbname=$dbname", $user, $password);
 
                     }catch(PODException $ex){
                             echo("no se pudo conectar, $ex");
@@ -27,4 +27,4 @@
 
 ?>
 
-;
+
