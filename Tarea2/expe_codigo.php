@@ -7,12 +7,29 @@
                     $password= "Garcia";
 
                     $conexion = pg_connect("host=localhost dbname=POO user=postgres password=Garcia");
-                    $inputId = intval($_REQUEST['inputId']);
+                    $inputId = intval($_REQUEST['inputExpediente']);
+                    $inputDenunciante = intval($_REQUEST['inputDenunciante']);
+                    $inputDenunciado = intval($_REQUEST['inputDenunciado']);
+                    $inputOfendido = intval($_REQUEST['inputOfendido']);
 
                     $query = "INSERT INTO public.expediente(
                         n_expediente, breve_narracion, estado_expe, fecha, delito)
-                        VALUES ($inputId , '$_REQUEST[inputNombre]' , '$_REQUEST[inputApellidos]' , '$_REQUEST[inputSexo]' , '$_REQUEST[inputGenero] ', '$_REQUEST[inputAddress]')";
-          
+                        VALUES ($inputId , '$_REQUEST[inputBreve]' , '$_REQUEST[inputEstado]' , '$_REQUEST[inputFecha]' , '$_REQUEST[inputDelitos] ');";
+                    
+                    
+                    $query .= "INSERT INTO public.expe_denunciante(
+                        \"id_expeDenu\", n_expediente, id_denunciante)
+                        VALUES ($inputId, $inputId, $inputDenunciante );";
+
+                    $query .= "INSERT INTO public.expe_detenido(
+                        \"id_expeDete\", n_expediente, id_detenido)
+                         VALUES ($inputId , $inputId , $inputDenunciado);";
+
+                    $query .= "INSERT INTO public.expe_ofendido(
+                        \"id_expeOfen\", n_expediente, id_ofendido)
+                        VALUES ($inputId , $inputId , $inputOfendido);";
+
+
 
                     $consulta = pg_query($conexion, $query);
 

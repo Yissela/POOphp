@@ -53,7 +53,7 @@
  
   
   <div class="col-12">
-    <button type="submit" class="btn btn-primary">Sign in</button>
+    <button type="submit" class="btn btn-primary">Guardar</button>
   </div>
   <div class="col-12">
     <button type="button" class="btn btn-primary" onclick="Expediente()">Ir a expediente</button>
