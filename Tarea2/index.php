@@ -15,7 +15,7 @@
 ?>
 
 
-<form class="row g-3" method="POST" action="codigo.php">
+<form class="row g-3" method="post" action="codigo.php">
 <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Identificacion</label>
     <input type="number" class="form-control" id="inputId" name="inputId">
