@@ -37,6 +37,7 @@
                     if($consulta){
 
                         echo 'datos del cliente insertados';
+                        
                     }
 
                     pg_close();
