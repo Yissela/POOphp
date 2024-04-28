@@ -15,10 +15,18 @@
 ?>
 
 
-<form class="row g-3" method="post" action="buscar_codigo.php">
+<form class="row g-3" method="post" action="buscar_persona.php">
 <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">Numero de expediente</label>
+    <label for="inputEmail4" class="form-label">Numero de identidad</label>
     <input type="number" class="form-control" id="inputId" name="inputId">
+    <div class="col-md-4">
+    <label for="inputState" class="form-label">Caracteristicas</label>
+    <select id="inputCara" class="form-select" name="inputCara">
+      <option selected>ofendido</option>
+      <option>denunciante</option>
+      <option>denunciado</option>
+    </select>
+  </div>
   </div>
   
   

@@ -17,18 +17,32 @@
                     JOIN expe_detenido exDete ON expe.n_expediente = exDete.n_expediente
                     Join detenido d ON d.id_detenido = exDete.id_detenido
 					
-					Where expe.n_expediente= '322';"
+					Where expe.n_expediente= '$inputId'";
+
+                $consulta = pg_query($conexion, $query);    
+
+         if($consulta){
+
+                if(pg_num_rows($consulta)>0){
+                        echo "<p>Expediente numero $inputId <br>";
+                        echo "<p>-------------------------- <br>";
+
+                        while ($obj = pg_fetch_object($consulta)){
 
 
-         $consulta = pg_query($conexion, $query);
+
+                            echo "identidad del ofendidio: " .$obj->id_ofendido. "<br>";
+                            echo "nombre del ofendidio: " .$obj->nombre. "<br>";
+                            echo "Delitos: " .$obj->delito. "<br>";
+                            echo "Estado del expediente: " .$obj->estado_expe. "<br>";
+                            echo "identidad del detenido: " .$obj->id_detenido. "<br>";
+                            echo "nombre del detenido: " .$obj->nombre. "<br>";
 
 
-                    if($consulta){
+                        }
 
-                        echo 'datos del cliente insertados';
-                       
-                    }
+                }
 
-                    pg_close();
+         }
 
 ?>
